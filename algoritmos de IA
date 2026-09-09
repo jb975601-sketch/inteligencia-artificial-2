@@ -1,0 +1,100 @@
+1. ¿Qué es el aprendizaje automático?
+El aprendizaje automático es una rama de la inteligencia artificial que se centra en el desarrollo de algoritmos y modelos estadísticos que permiten a los sistemas informáticos realizar tareas sin instrucciones explícitas, basándose en patrones e inferencias. A diferencia de la programación tradicional, donde se proporcionan reglas específicas para resolver un problema, en el aprendizaje automático se entrena al sistema con datos, permitiéndole identificar patrones y tomar decisiones con mínima intervención humana.
+2. ¿Qué es un árbol de decisiones?
+Un árbol de decisión es un algoritmo de aprendizaje supervisado no paramétrico, que se utiliza tanto para tareas de clasificación como de regresión. Tiene una estructura jerárquica de árbol, que consta de un nodo raíz, ramas, nodos internos y nodos hoja. El aprendizaje de árboles de decisión emplea una estrategia de “divide y vencerás” realizando una búsqueda codiciosa para identificar los puntos de división óptimos dentro de un árbol. Este proceso de división se repite de forma descendente y recursiva hasta que todos o la mayoría de los registros se hayan clasificado con etiquetas de clase específicas.
+3. ¿Qué es Keras?
+Keras es una biblioteca de alto nivel diseñada para la implementación de modelos de aprendizaje profundo. Es conocida por su facilidad de uso, modularidad y capacidad de extensión. Funciona como una interfaz para frameworks como TensorFlow, PyTorch, JAX y OpenVINO, lo que permite a los desarrolladores construir y entrenar modelos de manera eficiente.
+4. ¿Qué es la cuantización vectorial (VQ)?
+La cuantización vectorial (VQ) es una técnica clásica de cuantificación proveniente del procesamiento de señales que permite modelar funciones de densidad de probabilidad mediante la distribución de vectores prototipo. Originalmente se utilizó para la compresión de datos. Funciona dividiendo un gran conjunto de puntos (vectores) en grupos que tienen aproximadamente el mismo número de puntos más cercanos a ellos. Cada grupo está representado por su punto centroide, como en k-means y otros algoritmos de agrupación.
+La propiedad de coincidencia de densidad de la cuantificación vectorial es poderosa, especialmente para identificar la densidad de datos grandes y de alta dimensión. Dado que los puntos de datos están representados por el índice de su centroide más cercano, los datos que ocurren comúnmente tienen un error bajo y los datos raros tienen un error alto. Por esta razón, VQ es adecuado para la compresión de datos con pérdida. También se puede utilizar para la corrección de datos con pérdida y la estimación de densidad.
+5.Aprendizaje de Múltiples Núcleos (Multiple Kernel Learning - MKL)
+Es una técnica avanzada de aprendizaje automático que mejora los métodos basados en kernels (como SVM).
+En lugar de usar un solo kernel (función que mide similitud entre datos), el algoritmo combina automáticamente varios kernels (lineal, polinomial, RBF, etc.) y aprende cuáles son más útiles y con qué peso.
+Ventajas:
+
+Maneja mejor datos complejos o de distintas fuentes (texto + imagen + numéricos).
+Es más flexible y suele dar mejor rendimiento que un solo kernel.
+Se usa mucho en clasificación, regresión y análisis de datos heterogéneos.
+
+En resumen: el modelo “elige y mezcla” los mejores kernels de forma automática durante el entrenamiento.
+6. ¿Qué es Leabra?
+Leabra (Local, Error-driven and Associative, Biologically Realistic Algorithm) es un algoritmo de redes neuronales creado por Randall O’Reilly.
+Se caracteriza por ser:
+
+Biológicamente realista (imita mejor cómo funciona el cerebro).
+Combina dos tipos de aprendizaje:
+Aprendizaje hebbiano (asociativo)
+Aprendizaje basado en error (como backpropagation, pero más local)
+
+Usa unidades de activación que se parecen más a neuronas reales.
+
+Se utiliza principalmente en modelado cognitivo y neurociencia computacional (simular cómo el cerebro aprende, recuerda, percibe, etc.). Es muy popular en la plataforma Emergent.
+7. Aprendizaje Q (Q-Learning)
+Es uno de los algoritmos más importantes de aprendizaje por refuerzo.
+El agente aprende una tabla Q (o función Q) que guarda el valor esperado de realizar una acción en un estado determinado:
+$Q(s, a)$
+Donde:
+
+$s$ = estado actual
+$a$ = acción
+
+El agente actualiza la tabla con la fórmula:
+$Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]$
+
+$\alpha$ = tasa de aprendizaje
+$r$ = recompensa recibida
+$\gamma$ = factor de descuento (importancia de recompensas futuras)
+
+Es off-policy (puede aprender la política óptima aunque esté explorando otras acciones). Es la base de muchos sistemas de IA que juegan (Atari, robots, etc.).
+8. Aprendizaje por Refuerzo (Reinforcement Learning - RL)
+Es un paradigma de aprendizaje automático donde un agente aprende a tomar decisiones interactuando con un entorno.
+El agente:
+
+Observa el estado actual
+Elige una acción
+Recibe una recompensa (positiva o negativa)
+Pasa a un nuevo estado
+Repite el proceso
+
+El objetivo es maximizar la recompensa acumulada a largo plazo.
+Componentes principales:
+
+Agente
+Entorno
+Estados
+Acciones
+Recompensas
+Política (estrategia que decide qué acción tomar)
+
+Ejemplos famosos: AlphaGo, robots que caminan, sistemas de recomendación, control de tráfico, etc.
+Dentro de RL existen métodos como Q-Learning, SARSA, Policy Gradient, Actor-Critic, PPO, etc.
+9. Bosque Aleatorio (Random Forest)
+Es un algoritmo de aprendizaje supervisado basado en el conjunto de muchos árboles de decisión.
+Cómo funciona:
+
+Crea cientos o miles de árboles de decisión.
+Cada árbol se entrena con una muestra aleatoria de los datos (bagging) y un subconjunto aleatorio de características.
+Para predecir:
+En clasificación: se vota por mayoría
+En regresión: se promedia el resultado de todos los árboles
+
+
+Ventajas:
+
+Muy potente y preciso
+Resistente al sobreajuste
+Maneja bien datos con muchas variables
+Puede estimar la importancia de cada característica
+
+Es uno de los algoritmos más usados en la práctica (junto con XGBoost y LightGBM).
+10. Algoritmo de Vigilia-Sueño (Wake-Sleep Algorithm)
+Es un algoritmo de aprendizaje no supervisado propuesto por Geoffrey Hinton y colaboradores en 1995.
+Se usa principalmente para entrenar máquinas de Helmholtz (modelos generativos de dos vías: reconocimiento y generación).
+Tiene dos fases que se alternan:
+
+Fase de Vigilia (Wake):
+Los datos reales fluyen de abajo hacia arriba. Se ajustan las conexiones de reconocimiento (para que el modelo aprenda a inferir las causas ocultas de los datos).
+Fase de Sueño (Sleep):
+El modelo genera datos “imaginarios” de arriba hacia abajo. Se ajustan las conexiones generativas para que se parezcan más a los datos reales.
+
+Es un precursor importante de los modelos generativos modernos (como las redes de creencias profundas y, en cierta medida, de los autoencoders y GANs).
